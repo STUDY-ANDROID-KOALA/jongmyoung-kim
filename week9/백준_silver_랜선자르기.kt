@@ -13,11 +13,7 @@ fun main() = with(System.out.bufferedWriter()) {
 
     while (left < right) {
         val mid = (left + right) / 2
-        var count = 0L
-
-        for (cable in lanCables) {
-            count += cable / mid
-        }
+        val count = lanCables.sumOf { it / mid }
 
         if (count < N) right = mid
         else left = mid + 1
